@@ -8,15 +8,15 @@ js tool for wallet server
 我把js的钱包服务打包成docker镜像了，可以在release中下载。
 
 
-仍然可以自己运行，请使用代码
+仍然可以自己使用源代码运行
 
-# wallet_server
-js tool for wallet server
+docker image
 
+1. 加载镜像
+docker load < wallet-signer-amd.tar
 
-# Note: If it is not deployed locally, you need to modify the JS_SERVER host address in the code,
+2. 检查镜像是否加载成功
+docker images wallet-signer-amd
 
-# Wallet service encapsulation
-I packaged the js wallet service into a docker image, which can be downloaded in the release.
-
-You can still run it yourself, please use the code
+3. 启动容器（后台运行）
+docker run -d -p 3666:3666 --name wallet-signer-amd --restart=always wallet-signer-amd
